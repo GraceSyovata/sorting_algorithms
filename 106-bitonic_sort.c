@@ -1,9 +1,3 @@
-98% of storage used … If you run out, you can't create, edit, and upload files. Get 100 GB of storage for Ksh 250.00 Ksh 120.00/month for 6 months.
-/*
- * File: 106-bitonic_sort.c
- * Auth: Brennan D Baraban
- */
-
 #include "sort.h"
 
 void swap_ints(int *a, int *b);
