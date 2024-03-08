@@ -1,4 +1,3 @@
-98% of storage used … If you run out, you can't create, edit, and upload files. Get 100 GB of storage for Ksh 250.00 Ksh 120.00/month for 6 months.
 #include "sort.h"
 
 void swap_node_ahead(listint_t **list, listint_t **tail, listint_t **shaker);
