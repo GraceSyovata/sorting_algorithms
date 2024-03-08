@@ -1,45 +1,30 @@
-98% of storage used … If you run out, you can't create, edit, and upload files. Get 100 GB of storage for Ksh 250.00 Ksh 120.00/month for 6 months.
 #include "sort.h"
-
 /**
- * swap_ints - Swap two integers in an array.
- * @a: The first integer to swap.
- * @b: The second integer to swap.
- */
-void swap_ints(int *a, int *b)
-{
-	int tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
-/**
- * selection_sort - Sort an array of integers in ascending order
- *                  using the selection sort algorithm.
- * @array: An array of integers.
- * @size: The size of the array.
- *
- * Description: Prints the array after each swap.
- */
+  * selection_sort - selection sort algorithm
+  * @array: array to sort
+  * @size: size of array
+  */
 void selection_sort(int *array, size_t size)
 {
-	int *min;
-	size_t i, j;
+	size_t i, i2;
+	int min, tmp, idx;
 
-	if (array == NULL || size < 2)
-		return;
-
-	for (i = 0; i < size - 1; i++)
+	for (i = 0; i < size; i++)
 	{
-		min = array + i;
-		for (j = i + 1; j < size; j++)
-			min = (array[j] < *min) ? (array + j) : min;
-
-		if ((array + i) != min)
+		min = array[i];
+		for (i2 = i + 1; i2 < size; i2++)
 		{
-			swap_ints(array + i, min);
+			if (min > array[i2])
+			{
+				min = array[i2];
+				idx = i2;
+			}
+		}
+		if (min != array[i])
+		{
+			tmp = array[i];
+			array[i] = min;
+			array[idx] = tmp;
 			print_array(array, size);
 		}
 	}
